@@ -107,6 +107,7 @@ router.get("/getConversation", TokenVerfy, async (req, res) => {
 // ========== create Message
 router.post("/create/message", TokenVerfy, async (req, res) => {
   try {
+    console.log(req.body)
     const newMessage = await MessageModal.create({
       conversationId: req.user.user,
       senderId: req.user._id,
