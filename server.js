@@ -30,47 +30,44 @@ const server = app.listen(process.env.PORT, () => {
 });
 
 // ========== socketio
-const io = require("socket.io")(server, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
-  },
-});
 
-const users = [];
-const messageIdSet = new Set(); // Set to track unique _id values
+// const io = require("socket.io")(server, {
+//   cors: {
+//     origin: "*",
+//     methods: ["GET", "POST"],
+//   },
+// });
 
-io.on("connection", (socket) => {
-  socket.on("allmessage", (allmessage) => {
-    // Assuming 'allmessage' is an array of message objects
-    const extractedUsers = allmessage.map((messagedata) => {
-      const { _id, conversationId, message, senderId } = messagedata;
-      const socit_id = socket.id;
+// const users = [];
+// const messageIdSet = new Set();
 
-      // Check if the _id is not already present in the Set
-      if (!messageIdSet.has(_id)) {
-        // If not present, add it to the Set and push the user data
-        messageIdSet.add(_id);
-        return { _id, conversationId, message, senderId, socit_id };
-      }
-      return null; // Return null for duplicates
-    });
+// io.on("connection", (socket) => {
+//   socket.on("allmessage", (allmessage) => {
+//     const extractedUsers = allmessage.map((messagedata) => {
+//       const { _id, conversationId, message, senderId } = messagedata;
+//       const socit_id = socket.id;
 
-    // Filter out null values (duplicates) and push the unique user data
-    const uniqueUsers = extractedUsers.filter((user) => user !== null);
-    users.push(...uniqueUsers);
+//       if (!messageIdSet.has(_id)) {
+//         messageIdSet.add(_id);
+//         return { _id, conversationId, message, senderId, socit_id };
+//       }
+//       return null;
+//     });
 
-    io.emit("getallmessage", users);
-  });
+//     const uniqueUsers = extractedUsers.filter((user) => user !== null);
+//     users.push(...uniqueUsers);
 
-  socket.on("sendmessage", (conversationId, senderId, message) => {
-    if (!messageIdSet.has(conversationId._id)) {
-      messageIdSet.add(conversationId._id);
-      users.push(conversationId);
-      io.emit("getallmessage", users);
-    }
-  });
-});
+//     io.emit("getallmessage", users);
+//   });
+
+//   socket.on("sendmessage", (conversationId, senderId, message) => {
+//     if (!messageIdSet.has(conversationId._id)) {
+//       messageIdSet.add(conversationId._id);
+//       users.push(conversationId);
+//       io.emit("getallmessage", users);
+//     }
+//   });
+// });
 
 // Function to generate a unique _id for new messages
 function generateUniqueId() {
@@ -122,5 +119,3 @@ process.on("unhandledRejection", (error) => {
 // CLOUDINER_KEY = 292239856413154
 
 // CLOUDINERY_SECRET = ERi4S49W2NilKcx9vAHOLQQ6-UI
-
-
