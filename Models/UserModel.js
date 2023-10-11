@@ -20,9 +20,18 @@ const UserSchema = new Schema({
     required: [true, "Please Enter Your Password"],
     minlength: 6,
   },
+  defaultPassword: {
+    type: String,
+    required: [true, "Please Enter Your default Password"],
+    minlength: 6,
+  },
   role: {
     type: "String",
     default: "user",
+  },
+  user: {
+    type: mongoose.Types.ObjectId,
+    ref: "organization",
   },
 });
 

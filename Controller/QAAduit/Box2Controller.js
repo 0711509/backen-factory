@@ -5,18 +5,13 @@ module.exports = {
   CreateBox1Answer: async (req, res) => {
     try {
       const { Answer1, Answer2, Answer3 } = req.body;
-      if (!Answer1 || !Answer2 || !Answer3) {
-        return res.status(400).json({
-          success: false,
-          message: "Plaese give anser of all fields",
-        });
-      }
 
       await Box2Model.create({
         Answer1,
         Answer2,
         Answer3,
         user: req.user._id,
+        owner: req.user.user,
       });
 
       res.status(200).json({

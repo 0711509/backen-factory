@@ -12,7 +12,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -39,7 +39,7 @@ const QAbox6Schema = new Schema({
       required: [true, "Plaese Enter Are there any electric forklifts? "],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -63,7 +63,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -87,7 +87,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -108,7 +108,7 @@ const QAbox6Schema = new Schema({
       required: [true, "Plaese Enter Pest control program is set up"],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -132,7 +132,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -153,7 +153,7 @@ const QAbox6Schema = new Schema({
       required: [true, "Plaese Enter Hold area is clean and organized."],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -177,7 +177,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -201,7 +201,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -225,7 +225,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -246,7 +246,7 @@ const QAbox6Schema = new Schema({
       required: [true, "Plaese Enter Evidence that FEFO is being followed"],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -270,7 +270,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -294,7 +294,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -318,7 +318,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -342,7 +342,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -366,7 +366,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -390,7 +390,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -411,7 +411,7 @@ const QAbox6Schema = new Schema({
       required: [true, "Plaese Enter Maintenance area is clean and organized."],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -435,7 +435,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -456,7 +456,7 @@ const QAbox6Schema = new Schema({
       required: [true, "Plaese Enter Product rows are straight."],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -480,7 +480,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -504,7 +504,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -525,7 +525,7 @@ const QAbox6Schema = new Schema({
       required: [true, "Plaese Enter No signs of pest harborage."],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -545,11 +545,11 @@ const QAbox6Schema = new Schema({
       type: String,
       required: [
         true,
-        "Plaese Enter Exterior bait stations are numbered, clean,.",
+        "Plaese Enter Exterior bait stations are Stringed, clean,.",
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -570,7 +570,7 @@ const QAbox6Schema = new Schema({
       required: [true, "Plaese Enter All dock doors used to ship and receiv."],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -591,7 +591,7 @@ const QAbox6Schema = new Schema({
       required: [true, "Plaese Enter All exterior doors are locked."],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -612,7 +612,7 @@ const QAbox6Schema = new Schema({
       required: [true, "Plaese Enter All holes, pipes, windows, vents,."],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -636,7 +636,7 @@ const QAbox6Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -656,6 +656,10 @@ const QAbox6Schema = new Schema({
     type: mongoose.Types.ObjectId,
     ref: "user",
     required: true,
+  },
+  owner: {
+    type: mongoose.Types.ObjectId,
+    ref: "organization",
   },
 });
 

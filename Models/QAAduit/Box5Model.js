@@ -9,7 +9,7 @@ const QAbox5Schema = new Schema({
       required: [true, "Plaese Enter Chemical control program in placel"],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -35,7 +35,7 @@ const QAbox5Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -56,7 +56,7 @@ const QAbox5Schema = new Schema({
       required: [true, "Plaese Enter Effective Recall Procedure in place."],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -80,7 +80,7 @@ const QAbox5Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -101,7 +101,7 @@ const QAbox5Schema = new Schema({
       required: [true, "Plaese Enter If this is a re-pack facility ensure"],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -125,7 +125,7 @@ const QAbox5Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -149,7 +149,7 @@ const QAbox5Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -173,7 +173,7 @@ const QAbox5Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -201,7 +201,7 @@ const QAbox5Schema = new Schema({
       required: [true, "Plaese Enter Product HOLD policy is established"],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -225,7 +225,7 @@ const QAbox5Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -249,7 +249,7 @@ const QAbox5Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -273,7 +273,7 @@ const QAbox5Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -297,7 +297,7 @@ const QAbox5Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -321,7 +321,7 @@ const QAbox5Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -342,7 +342,7 @@ const QAbox5Schema = new Schema({
       required: [true, "Plaese Enter Is there a food safety team in place?"],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -366,7 +366,7 @@ const QAbox5Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -390,7 +390,7 @@ const QAbox5Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -410,6 +410,10 @@ const QAbox5Schema = new Schema({
     type: mongoose.Types.ObjectId,
     ref: "user",
     required: true,
+  },
+  owner: {
+    type: mongoose.Types.ObjectId,
+    ref: "organization",
   },
 });
 

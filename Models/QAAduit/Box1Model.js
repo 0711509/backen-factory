@@ -9,7 +9,7 @@ const QAbox1Schema = new Schema({
       required: [true, "Plaese Enter How long did it take to complete re-call"],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -32,7 +32,7 @@ const QAbox1Schema = new Schema({
       required: [true, "Plaese Enter warehouse team"],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -53,7 +53,7 @@ const QAbox1Schema = new Schema({
       required: [true, "Plaese Enter warehouse team"],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -74,7 +74,7 @@ const QAbox1Schema = new Schema({
       required: [true, "Plaese Enter warehouse team"],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -95,7 +95,7 @@ const QAbox1Schema = new Schema({
       required: [true, "Plaese Enter warehouse team"],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -116,7 +116,7 @@ const QAbox1Schema = new Schema({
       required: [true, "Plaese Enter warehouse team"],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -135,6 +135,10 @@ const QAbox1Schema = new Schema({
     type: mongoose.Types.ObjectId,
     ref: "user",
     required: true,
+  },
+  owner: {
+    type: mongoose.Types.ObjectId,
+    ref: "organization",
   },
 });
 

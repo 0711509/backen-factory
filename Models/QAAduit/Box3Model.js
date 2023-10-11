@@ -12,7 +12,7 @@ const QAbox3Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -38,7 +38,7 @@ const QAbox3Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -62,7 +62,7 @@ const QAbox3Schema = new Schema({
       ],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter Score"],
     },
     comment: {
@@ -82,6 +82,10 @@ const QAbox3Schema = new Schema({
     type: mongoose.Types.ObjectId,
     ref: "user",
     required: true,
+  },
+  owner: {
+    type: mongoose.Types.ObjectId,
+    ref: "organization",
   },
 });
 

@@ -9,7 +9,7 @@ const QAbox4Schema = new Schema({
       required: [true, "Plaese Enter Answer"],
     },
     score: {
-      type: Number,
+      type: String,
       required: [true, "Plaese Enter  Score"],
     },
     comment: {
@@ -42,6 +42,10 @@ const QAbox4Schema = new Schema({
     type: mongoose.Types.ObjectId,
     ref: "user",
     required: true,
+  },
+  owner: {
+    type: mongoose.Types.ObjectId,
+    ref: "organization",
   },
 });
 

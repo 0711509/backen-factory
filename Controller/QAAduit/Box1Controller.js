@@ -5,8 +5,6 @@ const cloudinary = require("cloudinary");
 module.exports = {
   CreateBox1Answer: async (req, res) => {
     try {
-      req.body.user = req.user._id;
-
       // Define an array of answer objects
       const answers = [
         req.body.Asnwer1,
@@ -24,6 +22,7 @@ module.exports = {
             folder: "Inventory",
             width: 300,
             crop: "scale",
+            resource_type: "auto",
           });
           return {
             public_id: mycloud.public_id,
@@ -40,6 +39,9 @@ module.exports = {
           answers[i].image = await uploadToCloudinary(answers[i].img);
         }
       }
+
+      req.body.user = req.user._id;
+      req.body.owner = req.user.user;
 
       await Box1Model.create(req.body);
       res.status(200).json({

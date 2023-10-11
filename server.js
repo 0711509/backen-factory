@@ -29,6 +29,55 @@ const server = app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
 
+// ========== socketio
+const io = require("socket.io")(server, {
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+  },
+});
+
+const users = [];
+const messageIdSet = new Set(); // Set to track unique _id values
+
+io.on("connection", (socket) => {
+  socket.on("allmessage", (allmessage) => {
+    // Assuming 'allmessage' is an array of message objects
+    const extractedUsers = allmessage.map((messagedata) => {
+      const { _id, conversationId, message, senderId } = messagedata;
+      const socit_id = socket.id;
+
+      // Check if the _id is not already present in the Set
+      if (!messageIdSet.has(_id)) {
+        // If not present, add it to the Set and push the user data
+        messageIdSet.add(_id);
+        return { _id, conversationId, message, senderId, socit_id };
+      }
+      return null; // Return null for duplicates
+    });
+
+    // Filter out null values (duplicates) and push the unique user data
+    const uniqueUsers = extractedUsers.filter((user) => user !== null);
+    users.push(...uniqueUsers);
+
+    io.emit("getallmessage", users);
+  });
+
+  socket.on("sendmessage", (conversationId, senderId, message) => {
+    if (!messageIdSet.has(conversationId._id)) {
+      messageIdSet.add(conversationId._id);
+      users.push(conversationId);
+      io.emit("getallmessage", users);
+    }
+  });
+});
+
+// Function to generate a unique _id for new messages
+function generateUniqueId() {
+  // Implement your unique ID generation logic here
+  // For example, you can use a library like uuid or a combination of timestamp and random numbers
+}
+
 // ------- router
 
 // -----user
@@ -37,6 +86,10 @@ app.use("/api/user", require("./Router/UserRouter"));
 app.use("/api", require("./Router/3PLAudit/3PLAduitRouter"));
 // ------------ QA Aduit
 app.use("/api", require("./Router/QAAduit/QAaduitroute"));
+app.use("/api", require("./Router/OrganizationRouter"));
+app.use("/api", require("./Router/WorkOrder"));
+app.use("/api", require("./Router/AuditRouter"));
+app.use("/api", require("./Router/ScheduleRouter"));
 
 // =============== Error Handling
 // --------uncaughtException

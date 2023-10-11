@@ -1,7 +1,7 @@
-const UserModel = require("../Models/UserModel");
 const jwt = require("jsonwebtoken");
+const OrganizationMoad = require("../Models/OrganizationMoad");
 
-const TokenVerfy = async (req, res, next) => {
+const OrganizationTokenVerify = async (req, res, next) => {
   try {
     const token = req.headers["token"];
 
@@ -11,13 +11,8 @@ const TokenVerfy = async (req, res, next) => {
         message: "Please Login Your Token Is Expire",
       });
     }
-    const decoded = await jwt.verify(token, process.env.SECRET_KEY);
-    req.user = await UserModel.findById(decoded.id);
-    // if(!req.user){
-    //   return res.status(400).json({
-    //     success
-    //   })
-    // }
+    const decoded = await jwt.verify(token, process.env.SECRET_KEY_ORG);
+    req.org = await OrganizationMoad.findById(decoded.id);
     next();
   } catch (error) {
     res.status(400).json({
@@ -27,4 +22,4 @@ const TokenVerfy = async (req, res, next) => {
   }
 };
 
-module.exports = TokenVerfy;
+module.exports = OrganizationTokenVerify;
