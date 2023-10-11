@@ -2,5 +2,11 @@
     "version": 2,
     "name": "server",
     "builds": [{ "src": "server.js", "use": "@vercel/node" }],
-    "routes": [{ "src": "/(.*)", "dest": "/server.js" }]
+    "routes": [{ "src": "/(.*)", "dest": "/server.js" }],
+    "env": {
+      "APP_ID": "@channels-app-id",
+      "KEY": "app-key",
+      "SECRET": "@channels-app-secret",
+      "CLUSTER": "cluster-region"
+    }
   }
