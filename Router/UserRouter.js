@@ -73,6 +73,13 @@ router.get(
   controller.orgAllUserByLoginUser
 );
 
+// ===== update user role
+router.post(
+  "/updaterole/:id",
+  TokenVerfy,
+  AdminVerify("superAdmin"),
+  controller.updateRole
+);
 // ================= create conversation
 router.post("/createConversation", TokenVerfy, async (req, res) => {
   try {
