@@ -531,7 +531,7 @@ module.exports = {
   // },
   updateRole: async (req, res) => {
     try {
-      const { role } = req.bod;
+      const { role } = req.body;
       if (!role) {
         return res.status(400).json({
           success: false,
