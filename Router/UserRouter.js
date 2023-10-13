@@ -74,7 +74,7 @@ router.get(
 );
 
 // ===== update user role
-router.post(
+router.put(
   "/updaterole/:id",
   TokenVerfy,
   AdminVerify("superAdmin"),
