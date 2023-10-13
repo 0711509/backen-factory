@@ -32,7 +32,7 @@ router.put(
 
 router.get("/getallusersforadmin", TokenVerfy, controller.GetAllUser);
 
-router.delete("/deleteuser/:id", TokenVerfy, controller.deleteuser);
+router.delete("/deleteuser/:id",  controller.deleteuser);
 
 router.post("/uploadfile", TokenVerfy, controller.UploadDocument);
 
