@@ -499,6 +499,36 @@ module.exports = {
   },
 
   // ========= update user role
+  // updateRole: async (req, res) => {
+  //   try {
+  //     const { role } = req.bod;
+  //     if (!role) {
+  //       return res.status(400).json({
+  //         success: false,
+  //         message: "Plaese Enter Your Role",
+  //       });
+  //     }
+  //     const user = await UserModel.findById(req.params.id);
+  //     if (!user) {
+  //       return res.status(400).json({
+  //         success: false,
+  //         message: "User Not Found Plaese Enter Valid Id",
+  //       });
+  //     }
+
+  //     user.role = role;
+  //     await user.save();
+  //     res.status(200).json({
+  //       success: true,
+  //       message: "User Role Updated Successfuly",
+  //     });
+  //   } catch (error) {
+  //     res.status(400).json({
+  //       success: false,
+  //       message: error.message,
+  //     });
+  //   }
+  // },
   updateRole: async (req, res) => {
     try {
       const { role } = req.bod;

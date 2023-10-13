@@ -74,6 +74,13 @@ router.get(
 );
 
 // ===== update user role
+// router.put(
+//   "/updaterole/:id",
+//   TokenVerfy,
+//   AdminVerify("superAdmin"),
+//   controller.updateRole
+// );
+// ===== update user role
 router.put(
   "/updaterole/:id",
   TokenVerfy,
